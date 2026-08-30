@@ -59,8 +59,8 @@ def make_style(transparent: bool):
         tab_inactive_bg = clear
         tab_active_bg = a(c["base02"], 0xb0)
         surface_bg = a(c["base03"], SURFACE_A)
-        status_bg = a(c["base03"], CHROME_A)
-        title_bg = a(c["base03"], CHROME_A)
+        status_bg = window_bg
+        title_bg = window_bg
         elevated_bg = c["base02"]              # opaque: popovers stay readable
         element_bg = a(c["base02"], 0x80)
         active_line = a(c["base03"], 0x66)
