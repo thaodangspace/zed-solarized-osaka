@@ -148,7 +148,9 @@ def make_style(transparent: bool):
         "editor.foreground": c["base0"],
         "editor.background": editor_bg,
         "editor.gutter.background": gutter_bg,
-        "editor.subheader.background": surface_bg,
+        # Sticky diff/file headers must be opaque so scrolled code does not
+        # bleed through and overlap their labels.
+        "editor.subheader.background": c["base03"],
         "editor.active_line.background": active_line,
         "editor.highlighted_line.background": a(c["base03"], 0x99),
         "editor.line_number": c["yellow700"],
