@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the Solarized Osaka Zed theme family (dark + dark blur)."""
+"""Generate the transparent, blurred Solarized Osaka dark theme for Zed."""
 import json
 
 # --- Palette (dark), computed from solarized-osaka.nvim colors.lua HSL values ---
@@ -129,6 +129,7 @@ def make_style(transparent: bool):
         "tab.active_background": tab_active_bg,
 
         "search.match_background": a(c["yellow500"], 0x55),
+        "search.active_match_background": a(c["orange500"], 0x66),
 
         "panel.background": panel_bg,
         "panel.focused_border": c["blue500"],
@@ -159,7 +160,7 @@ def make_style(transparent: bool):
         "editor.indent_guide_active": c["base01"],
         "editor.document_highlight.read_background": a(c["magenta900"], 0x88),
         "editor.document_highlight.write_background": a(c["magenta900"], 0xaa),
-        "editor.document_highlight.bracket_background": a(c["cyan800"], 0x88),
+        "editor.document_highlight.bracket_background": a(c["red900"], 0x88),
 
         "terminal.background": editor_bg,
         "terminal.ansi.background": editor_bg,
@@ -173,17 +174,26 @@ def make_style(transparent: bool):
         "terminal.ansi.blue": c["blue"],
         "terminal.ansi.magenta": c["magenta"],
         "terminal.ansi.cyan": c["cyan"],
-        "terminal.ansi.white": c["fg"],
-        "terminal.ansi.bright_black": c["base01"],
+        "terminal.ansi.white": c["base0"],
+        "terminal.ansi.bright_black": c["base04"],
         "terminal.ansi.bright_red": c["red"],
         "terminal.ansi.bright_green": c["green"],
         "terminal.ansi.bright_yellow": c["yellow"],
         "terminal.ansi.bright_blue": c["blue"],
         "terminal.ansi.bright_magenta": c["magenta"],
         "terminal.ansi.bright_cyan": c["cyan"],
-        "terminal.ansi.bright_white": c["base1"],
+        "terminal.ansi.bright_white": c["fg"],
 
         "link_text.hover": c["blue500"],
+
+        # Dedicated Git colors prevent the version control UI from inheriting
+        # generic status colors whose semantics differ from upstream.
+        "version_control.added": c["cyan500"],
+        "version_control.deleted": c["red500"],
+        "version_control.modified": c["yellow500"],
+        "version_control.renamed": c["blue500"],
+        "version_control.conflict": c["orange500"],
+        "version_control.ignored": c["base01"],
 
         "conflict": c["orange500"],
         "conflict.background": c["red950"],
@@ -198,7 +208,7 @@ def make_style(transparent: bool):
         "deleted.border": c["red900"],
 
         "error": c["red500"],
-        "error.background": c["red950"],
+        "error.background": c["red900"],
         "error.border": c["red900"],
 
         "hidden": c["base00"],
@@ -287,7 +297,7 @@ def syntax():
         "string.special.symbol": s(c["cyan500"]),
         "character": s(c["cyan500"]),
         "number": s(c["cyan500"]),
-        "boolean": s(c["orange500"]),
+        "boolean": s(c["cyan500"]),
 
         # Identifiers / functions -> blue
         "variable": s(c["base0"]),
@@ -303,7 +313,7 @@ def syntax():
         "constructor": s(c["orange500"]),
 
         # Keywords / statements / operators -> green
-        "keyword": s(c["green500"]),
+        "keyword": s(c["green500"], italic=True),
         "operator": s(c["green500"]),
         "label": s(c["green500"]),
 
