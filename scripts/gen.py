@@ -33,8 +33,8 @@ def make_style(transparent: bool):
     # enough to stay readable.
     bg = c["base04"]           # editor / window background
     bg_hl = c["base03"]        # highlighted background (statusline, popup)
-    surface = c["base03"]
-    elevated = c["base02"]
+    surface = c["base04"]
+    elevated = c["base04"]
 
     if transparent:
         # Blur mode. The blurred wallpaper only shows through surfaces whose
@@ -58,11 +58,11 @@ def make_style(transparent: bool):
         tabbar_bg = clear
         tab_inactive_bg = clear
         tab_active_bg = a(c["base02"], 0xb0)
-        surface_bg = a(c["base03"], SURFACE_A)
+        surface_bg = a(c["base04"], SURFACE_A)
         status_bg = window_bg
         title_bg = window_bg
-        elevated_bg = c["base02"]              # opaque: popovers stay readable
-        element_bg = a(c["base02"], 0x80)
+        elevated_bg = c["base04"]              # opaque: popovers stay readable
+        element_bg = a(c["base02"], 0x66)
         active_line = a(c["base03"], 0x66)
     else:
         editor_bg = bg
@@ -77,7 +77,7 @@ def make_style(transparent: bool):
         tab_active_bg = bg
         tab_inactive_bg = bg_hl
         gutter_bg = bg
-        element_bg = c["base02"]
+        element_bg = a(c["base02"], 0x66)
         active_line = a(c["base03"], 0xb3)
 
     style = {
@@ -96,16 +96,16 @@ def make_style(transparent: bool):
 
         "element.background": element_bg,
         "element.hover": a(c["base02"], 0x99),
-        "element.active": a(c["blue900"], 0xcc),
-        "element.selected": a(c["blue900"], 0xcc),
+        "element.active": a(c["base02"], 0xcc),
+        "element.selected": a(c["base02"], 0xcc),
         "element.disabled": a(c["base03"], 0x80),
 
         "drop_target.background": a(c["blue500"], 0x40),
 
         "ghost_element.background": a(c["base02"], 0x00),
         "ghost_element.hover": a(c["base02"], 0x80),
-        "ghost_element.active": a(c["blue900"], 0xaa),
-        "ghost_element.selected": a(c["blue900"], 0xaa),
+        "ghost_element.active": a(c["base02"], 0xaa),
+        "ghost_element.selected": a(c["base02"], 0xaa),
         "ghost_element.disabled": a(c["base03"], 0x80),
 
         "text": c["base0"],
