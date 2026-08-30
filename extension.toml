@@ -1,0 +1,7 @@
+id = "solarized-osaka"
+name = "Solarized Osaka"
+version = "0.1.0"
+schema_version = 1
+authors = ["Thao Dang <thaodang.space@gmail.com>"]
+description = "A port of craftzdog's solarized-osaka.nvim colorscheme for Zed, including transparent (blur) variants."
+repository = "https://github.com/thaodangspace/zed-solarized-osaka"
