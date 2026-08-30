@@ -8,6 +8,8 @@ macOS the editor picks up the system vibrancy/blur behind it.
 
 ## Preview
 
+![Solarized Osaka for Zed preview](./SCR-20260830-uaux.png)
+
 - **Background**: `#001419` (base04), rendered transparent + blurred
 - **Foreground**: `#839395`
 - **Accents**: cyan `#29a298` · blue `#268bd3` · green `#849900` · yellow `#b28500` · orange `#c94c16` · red `#db302d` · magenta `#d23681` · violet `#6d71c4`
