@@ -13,7 +13,7 @@ popovers remain opaque and chrome retains a dark tint for readability.
 
 ## Preview
 
-![Solarized Osaka for Zed preview](./SCR-20260830-uaux.png)
+![Solarized Osaka for Zed preview](./assets/screenshot.webp)
 
 - **Background**: `#001419` (base04), rendered transparent + blurred
 - **Editor foreground**: `#9eabac` (base0)
